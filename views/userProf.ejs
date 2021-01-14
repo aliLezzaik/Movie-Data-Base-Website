@@ -1,0 +1,53 @@
+<html id= "info1">
+
+<head>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css"/>
+    <title>Movie Information</title>
+    <link rel="icon" href="icon1.jpg" type="image/x "/>
+  </head>
+  <div class="topnav"><a href="/"><i class="fa fa-fw fa-home"></i>Home</a><a href="/search"><i class="fa fa-globe"></i>BrowseMovies</a><a href="/viewActor"><i class="fa fa-fw fa-search"></i>Browse Actor's information</a><a href="/chat"><i class='fas fa-comment'></i> Chat</a><a href="/clock"><i class='far fa-clock'></i></i>Time</a> <a href="/"><i class="fa fa-fw fa-user"></i> LogOut</a></div>
+ 
+  <h2><b>User's Information</b></h2><a ><img class="n3VNCb" alt="Person with the crown Royalty Free Vector Image" src="https://image.freepik.com/free-vector/businessman-character-avatar-icon-vector-illustration-design_24877-18271.jpg" data-noaft="1" jsname="HiaYvf" jsaction="load:XAeZkd;" style="width: 587px; height: 633.96px; margin: 0px;" align="right"/>
+    <p id="title1" name="movieTitle"> <b>username:</b><span><%=mascot.username%></span></p></a>
+  <ul id="information">
+
+
+    <li><b>email:</b><span> <%=mascot.email%></span></li>
+    <li><b>id:</b><span> <%=mascot.id%></span></li>
+    <li><b>status:</b><span> <%=mascot.status%></span></li>
+    <li href="#"><a><b>following:</b></a></span> </li>
+    <ol>
+      <% mascot.followingPeople.forEach(function (person){%>
+        <li><a href="/people/<%=person%>"><%=peopleName(person)%></a></li>
+        <%});%>
+    </ol>
+    
+    <li><a><b>reviews:</b></a></span></li>
+    <ol>
+      <% mascot.reviews.forEach(function (review) {%>
+        <li><strong><%=movieNames(review[0])%></strong><p>Rating: <%=review[1]%></p> <p>Comments: <%=review[2]%></p></li>
+        <% });%>
+    </ol>
+    <li><a><b>FollowReq:</b></a></span> </li>
+    
+
+
+  </ul>
+  <form href="#">
+    <div><button id= "searchbtn" name="followBtn"><%=followtxt%></button></div>
+  </form>
+  <a href="/manageUsers"><button id= "searchbtn">Back</button></a>
+      <style>
+        #info1{
+        background-color: gray;
+        }
+       
+      </style>
+    
+
+
+</html>

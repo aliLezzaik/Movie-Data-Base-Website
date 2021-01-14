@@ -1,0 +1,70 @@
+
+<html lang="en" id="browse1">
+    <div id="back1">
+        <head>
+          <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+          <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+          <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.css"/>
+          <link rel="icon" href="icon1.jpg" type="image/x "/>
+          <title>Browse Movies</title>
+        </head>
+        <div class="topnav"><a href="/"><i class="fa fa-fw fa-home"></i>Home</a><a href="/search"><i class="fa fa-globe"></i>BrowseMovies</a><a href="/viewActor"><i class="fa fa-fw fa-search"></i>Browse Actor's information</a><a href="/chat"><i class='fas fa-comment'></i> Chat</a><a href="/clock"><i class='far fa-clock'></i></i>Time</a> <a href="/"><i class="fa fa-fw fa-user"></i> LogOut</a></div>
+
+        <div class="container">
+          <form name="searchform">
+            <input id="filterInput" type="text"  placeholder="Movie Title, Actor, Director, Writer, Genre." name="searchbar">
+          <button href="#" name="searchbtn" id="searchbtn">Search</button>
+          </form>
+          
+          <div id="box1">
+            <ul class="collection with-header" id="names">
+              <% mascots.forEach(function(mascot) { %>
+                <li class="collection-item">
+                    <a href="/<%=mascot.imdbID%>"><strong><%= mascot.Title %></strong><p style="display: none;"><%=mascot.Year%> <%=mascot.Genre%> <%=calculateAverage(mascot.Ratings)%></p> </a>
+                     
+                </li>
+               
+            <% }); %>
+             
+            </ul>
+          </div>
+        </div>
+        <style>
+          #up{
+          color:black
+          }
+        </style>
+        <script>
+      
+        let movies = document.getElementById("names");
+       
+        function searchByKey()
+        {
+         
+            let input, a, txtValue;
+            input = document.getElementById("filterInput").value.toLowerCase();
+            
+            components = movies.getElementsByTagName("li");
+            
+            for (i = 0; i < components.length; i++) {
+                a = components[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toLowerCase().indexOf(input)>-1) {
+                    components[i].style.display = "";
+                } else {
+                    components[i].style.display = "none";
+                }
+                }
+            }
+        </script>
+      </div>
+      <style>
+        #browse1{
+        background-color: gray;
+        }
+      </style>
+    
+    </html>

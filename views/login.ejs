@@ -1,0 +1,35 @@
+
+
+
+<form action="/login" method="POST">
+  
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+  <title>Login</title>
+  <link rel="icon" href="icon1.jpg" type="image/x "/>
+</head><img id="base" src="https://www.publicdomainpictures.net/pictures/30000/velka/film-background-1334067869u9d.jpg"/>
+<div id="login-box"><img id="avatar" src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" =""/>
+  <h1>Login Here</h1>
+  <label for="email">Email</label>
+  <input type="text" name="email" id="email" placeholder="Enter email" required />
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password" placeholder="Enter Password" required/><a href="home">
+    <input type="submit" name="submit" value="Login"/></a><a href="register"> Create an Account! </a>
+    <div id="err">
+
+    <% if (messages.error) { %>
+      <%= messages.error %>
+    <% } %>
+    
+  </div>
+
+  <style>
+    #err{
+      font-weight: bold;
+      color: crimson;
+    }
+
+  </style>
+  
+    
+</div>

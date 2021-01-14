@@ -1,0 +1,62 @@
+<html id="info1">
+<div id="info1">
+
+  <head>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+      <link rel="stylesheet" type="text/css" href="/stylesheet.css"/>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.css"/>
+      <title>Information</title>
+      <link rel="icon" href="icon1.jpg" type="image/x "/>
+  </head>
+  <body style="background-color:grey;">
+    <div class="topnav"><a href="/"><i class="fa fa-fw fa-home"></i>Home</a><a href="/search"><i class="fa fa-globe"></i>BrowseMovies</a><a href="/viewActor"><i class="fa fa-fw fa-search"></i>Browse Actor's information</a><a href="/chat"><i class='fas fa-comment'></i> Chat</a><a href="/clock"><i class='far fa-clock'></i></i>Time</a> <a href="/"><i class="fa fa-fw fa-user"></i> LogOut</a></div>
+
+    <span style="white-space: pre">.</span>
+    <h2> <%=mascots.name%>'s Information</h2><img class="n3VNCb" alt="Person with the crown Royalty Free Vector Image" src="https://previews.123rf.com/images/khalide91/khalide911912/khalide91191201258/140231997-actor-avatar-icon-characters-of-professions-icon-premium-quality-graphic-design-signs-symbols-collec.jpg" data-noaft="1" jsname="HiaYvf" jsaction="load:XAeZkd;" style="width: 587px; height: 633.96px; margin: 0px;" align="right"/>
+
+
+
+    <h4><b>&nbsp;People who had the most contributons with this person:</b></h4>
+    
+      <ul id="information">
+          <%mascots.frequentActors.forEach(function(mascot) {%>
+          
+            <li> &nbsp;&nbsp; <%= mascot[0]%> has been into <%=mascot[1]%> movies with this person.</li>
+          
+          <%});%>
+      </ul>
+      
+      
+      <h4><b>&nbsp;Movies that this person has been a part of:</b></h4>
+      <ul >
+      <%mascots.movies.forEach(function (mascot){%>
+          <li>&nbsp;&nbsp;<a href="/<%=findId(mascot)%>"><span><%=mascot%></a></li></span>
+          <%});%>
+          </ul>
+        <form href="#">
+          <button id= "button-style"type="submit" name="followbtn">&nbsp; <%=followTxt%></button>
+        </form>
+        
+  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+
+
+  <style>
+   
+    #color{
+      background-color: black;
+    }
+    h2 {text-align: center;}
+    span{
+      color:blue;
+    }
+  </style>
+</div>
+</html>
+

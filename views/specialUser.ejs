@@ -1,0 +1,84 @@
+<html id = "home">
+
+
+
+<head>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+  <title>User&apos;s Account page!</title>
+  <link rel="icon" href="icon1.jpg" type="image/x "/>
+
+</head>
+<div class="topnav"><a href="/"><i class="fa fa-fw fa-home"></i>Home</a><a href="/search"><i class="fa fa-globe"></i>BrowseMovies</a><a href="/viewActor"><i class="fa fa-fw fa-search"></i>Browse Actor's information</a><a href="/chat"><i class='fas fa-comment'></i> Chat</a><a href="/clock"><i class='far fa-clock'></i></i>Time</a> <a href="/"><i class="fa fa-fw fa-user"></i> LogOut</a></div>
+<p id="user-id" type="text"> <b>Welcome to your account: (Contributing User)</b>  </p><img class="n3VNCb" alt="Person with the crown Royalty Free Vector Image" src="https://cdn5.vectorstock.com/i/1000x1000/32/09/person-with-the-crown-vector-11893209.jpg" data-noaft="1" jsname="HiaYvf" jsaction="load:XAeZkd;" style="width: 587px; height: 633.96px; margin: 0px;" align="right"/>
+
+<h2><span>Click here to manage users:</span></h2><a href="manageUsers"><button id= "button-style"type="submit">View All Users</button></a>
+<div><a href="userFollow"><button id= "button-style"type="submit">View Users You Follow</button></a></div>
+
+
+<h2><span>Click here to manage your People:</span></h2></div><a href="viewActor"><button id= "button-style"type="submit">View All People</button></a>
+<div><a href="managePeople"><button id= "button-style"type="submit">View People You Follow</button></a></div>
+
+  
+  
+
+<h2><span>Click here to see a list of movies you might Be Intrested In:</span></h2><a href="intrested"><button id= "button-style"type="submit">Might be Intrested In</button></a>
+
+<div>
+  
+
+  <h2><span>Click here to Add movies:</span></h2><a href="addMovie"><button id= "button-style"type="submit">Add A Movie Into The DataBase</button></a>
+  <h2><span>Click here to Add People:</span></h2><div><a href="addPerson"><button id= "button-style"type="submit">Add A Person Into The DataBase</button></a></div>
+  <div><a href="backToNormal"><button id= "button-style"type="submit">Switch to a Regular user</button></a></div>
+
+
+    <form action="/logout?_method=DELETE" method="POST">
+
+        <button id= "button-style"type="submit">Log Out</button>
+        
+
+  <script>
+    let movies = document.getElementById("names");
+     
+     function searchByKey()
+     {
+      
+         let input, a, txtValue;
+         input = document.getElementById("Input").value.toLowerCase();
+
+
+         components = movies.getElementsByTagName("li");
+         
+         
+         for (i = 0; i < components.length; i++) {
+             a = components[i].getElementsByTagName("a")[0];
+             txtValue = a.textContent || a.innerText;
+             if (txtValue.toLowerCase().indexOf(input)>-1) {
+                 components[i].style.display = "";
+             } else {
+                 components[i].style.display = "none";
+             }
+             }
+         }
+  </script>
+  
+</div>
+
+</form>
+
+
+<style>
+  #home{
+      background-color: grey;
+  }
+  #h2{
+    background-color: #1b799e;
+    
+  }
+  
+</style>
+</html>

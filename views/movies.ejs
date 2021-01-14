@@ -1,0 +1,84 @@
+<html id= "info1">
+
+<head>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    <title>Movie Information</title>
+    <link rel="icon" href="icon1.jpg" type="image/x "/>
+  </head>
+  <div class="topnav"><a href="/"><i class="fa fa-fw fa-home"></i>Home</a><a href="/search"><i class="fa fa-globe"></i>BrowseMovies</a><a href="/viewActor"><i class="fa fa-fw fa-search"></i>Browse Actor's information</a><a href="/chat"><i class='fas fa-comment'></i> Chat</a><a href="/clock"><i class='far fa-clock'></i></i>Time</a> <a href="/"><i class="fa fa-fw fa-user"></i> LogOut</a></div>
+
+    <p id="title1" name="movieTitle"> <%=mascot.Title%></p></a><img class="n3VNCb" alt="img" src="<%=mascot.Poster%>" data-noaft="1" jsname="HiaYvf" jsaction="load:XAeZkd;" style="width: 527px; height: 276.675px; margin: 0px;" align="right"/>
+  <ul id="information">
+
+
+    <li><b>Year:</b> <%=mascot.Year%></li>
+    <li><b>Release date:</b> <%=mascot.Released%></li>
+    <li><a href="/people/<%=idByName(mascot.Director)%>">Director:</a> <%=mascot.Director%></li>
+    <li><a href="/search?searchbar=<%=mascot.Genre%>">Genre:</a> <%=mascot.Genre%></li>
+    <li><b>Actors:</b><% mascot.Actors.split(", ").forEach(function(actor){%><a href="/people/<%=idByName(actor)%>"><%=actor%>, </a><%});%></li>
+    <li><b>Writer:</b> <%=mascot.Writer%></li>
+    <li><b>Language:</b> <%=mascot.Language%></li>
+    <li><b>Awards:</b> <%=mascot.Awards%></li>
+    <li><b>Production:</b> <%=mascot.Production%></li>
+    <li><b>Average Rating:</b> <%=calculateAverage(mascot.Ratings)%>%</li>
+    <li><b>Run Time: </b><%=mascot.Runtime%></li>
+    <li><b>Plot: </b><%=mascot.Plot%></li>
+
+
+    
+
+
+
+
+
+
+  </ul>
+  
+  </div>
+  <div> <h2>Recent Reveiws: </h2></div>
+  <ul>
+    <%reviews.forEach(function (review){%> <li><b>User : </b><%=review[0]%><p><b>Rate: </b><%=review[1]%>  out of 10</p><p><b>Text Review:</b> <%=review[2]%></p></li> <%});%>
+  </ul>
+
+  <a href="/search?searchbar=<%=mascot.Genre%>"><button  id="button-style" > Similar movies </button></a>
+
+  
+  <form href="#">
+    <input type="number" min="1" max="10" placeholder="How would you rate this movie out of 10?" style="width: 300px;" onkeydown="return false;" name="rating" >
+    <div><textarea name="comments" placeholder="How would you describe this movie?" style="width: 300px; height: 300px;"></textarea></div>
+    <div><a href="basic"><button  id="button-style"> Add a  Reveiw </button></a></div>
+    
+  </form>
+  <div><a href="/like"><button id="button-style"> Like</button></a></div>
+  
+  
+  <div><a href="/edit/<%=mascot.imdbID%>"><button  id="button-style"> Edit </button></a></div>
+
+
+  <style>
+    #info1{
+    background-color: gray;
+    }
+  </style>
+  <script>
+    function calculateAverage(ratings) {
+      let totalPercentage = 0;
+      let totalCounted = 0;
+      for (let i = 0; i < ratings.length;i++) {
+        if (ratings[i].indexOf('/') >-1) {
+          let components = ratings[i].Value.split("/");
+          totalPercentage+=(parseFloat(components[0])/parseFloat(components[1]))*100;
+        } else {
+          totalPercentage+=parseFloat(ratings[i].replace("%",""));
+        }
+        totalCounted++;
+      }
+      return totalPercentage / totalCounted;
+    }
+  </script>
+
+  </html>
